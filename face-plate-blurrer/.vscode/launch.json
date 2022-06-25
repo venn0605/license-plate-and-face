@@ -1,0 +1,65 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "yolo_detect",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\1_code\\face-plate-blurrer\\yolov5_blur\\detect.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":["--source", "C:\\1_code\\face-plate-blurrer\\Sample_Data", 
+                "--weights", "C:\\1_code\\face-plate-blurrer\\detect-plate-face-weights.pt", 
+                "--save-txt", 
+                "--name", "C:\\1_code\\face-plate-blurrer\\output", 
+                "--nosave", 
+                "--exist-ok"]
+        },
+
+        {
+            "name": "yolo_train",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\1_code\\face-plate-blurrer\\yolov5_blur\\train.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":[]
+        },
+
+        {
+            "name": "process2",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\1_code\\face-plate-blurrer\\process2.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":["--source", "C:\\1_code\\face-plate-blurrer\\Sample_Data", 
+                    "--target", "C:\\1_code\\face-plate-blurrer\\output", 
+                    "--copy", "True"]
+        },
+
+        {
+            "name": "blur_image",
+            "type": "python",
+            "request": "launch",
+            "program": "C:\\Users\\ZIY7WX\\Desktop\\face-plate-blurrer\\blur_image.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args":["--source", "C:\\Users\\ZIY7WX\\Desktop\\face-plate-blurrer\\Sample_Data", 
+                "--weights", "C:\\Users\\ZIY7WX\\Desktop\\face-plate-blurrer\\detect-plate-face-weights.pt", 
+                "--save-txt", 
+                "--name", "C:\\Users\\ZIY7WX\\Desktop\\face-plate-blurrer\\output", 
+                "--nosave", 
+                "--exist-ok",
+                "--copy",
+                "--luv-flag",
+                "--not-blur-face"
+            ]
+        },
+
+    ]
+}
